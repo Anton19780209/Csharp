@@ -6,15 +6,6 @@
 // [1 3 2 4 2 3] => [3 6 8]
 // [2 3 1 7 5 6 3] => [6 18 5]
 
-int[] Multiply(int[] array)
-{
-    int[] new_array = new int[array.Length / 2];
-    for (int i = 0; i < array.Length / 2; i++)
-    {
-        new_array[i] = array[i] * array[array.Length - 1 - i];
-    }
-    return new_array;
-}
 
 int[] CreateArray(int n, int min, int max)
 {
@@ -35,17 +26,15 @@ void PrintArray(int[] array)
     System.Console.WriteLine();
 }
 
-int [] CreateNewArray (int [] array)
+int[] CreateNewArray(int[] array)
 {
-    int [] array2 = new int [array.Length/2]; 
-    for (int i = 0; i < array.Length/2; i++)
+    int[] array2 = new int[array.Length / 2];
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        array2[i] = array[i]*array[array.Length-1-i];
+        array2[i] = array[i] * array[array.Length - 1 - i];
     }
     return array2;
 }
-
-
 
 System.Console.Write("Input size of array: ");
 int size = Convert.ToInt32(Console.ReadLine());
@@ -58,3 +47,12 @@ int[] arr = CreateArray(size, min, max);
 PrintArray(arr);
 PrintArray(CreateNewArray(arr));
 
+int[] Multiply(int[] array)
+{
+    int[] new_array = new int[array.Length / 2];
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        new_array[i] = array[i] * array[array.Length - 1 - i];
+    }
+    return new_array;
+}

@@ -5,19 +5,26 @@
 // [1 -5 6]
 // => [-1 5 -6]
 
-bool FindNumber(int num, int[] array)
+int[] CreateArray(int n, int min, int max) // метод создать массив
 {
-    foreach (int item in array)
+    int[] array = new int[n];
+    for (int i = 0; i < array.Length; i++)
     {
-        if (item == num)
-        {
-            return true;
-        }
+        array[i] = new Random().Next(min, max + 1);
     }
-    return false;
+    return array;
 }
 
-int[] SingInvert(int[] array)
+    void PrintArray(int[] array) // метод вывести массиы
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write(array[i] + " ");
+    }
+    System.Console.WriteLine();
+}
+
+int[] SingInvert(int[] array) // метод измнить знак
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -26,7 +33,12 @@ int[] SingInvert(int[] array)
     return array;
 }
 
-
+System.Console.Write("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+System.Console.Write("Input minimal value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+System.Console.Write("Input maximal value: ");
+int max = Convert.ToInt32(Console.ReadLine());
 
 int[] arr = CreateArray(size, min, max);
 PrintArray(arr);
