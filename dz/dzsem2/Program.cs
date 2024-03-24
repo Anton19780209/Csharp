@@ -41,42 +41,51 @@
 
 // Напишите программу, которая принимает на вход целое число 
 // из отрезка [10, 99] и показывает наибольшую цифру числа.
-
-// static void Main()
+// using System;
+// class Program
 // {
-//     System.Console.Write("Input two-digit number: ");
-//     int number = Convert.ToInt32(Console.ReadLine());
-//     int firstDigit = number / 10;
-//     int secondDigit = number % 10;
-//     int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
-//     Console.WriteLine(maxDigit);
-// }
+//     static void Main()
+//     {
+//         System.Console.Write("Input two-digit number: ");
+//         int number = Convert.ToInt32(Console.ReadLine());
 
+//         int firstDigit = number / 10;
+//         int secondDigit = number % 10;
+
+//         int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
+//         Console.WriteLine(maxDigit);
+//     }
+// }
 
 // Напишите программу, которая на вход принимает натуральное число N, а на выходе показывает его цифры через запятую.
 
-void Main(int n)
+
+using System;
+class Program
 {
-    Console.Write("Введите натуральное число N: ");
-    int num = Convert.ToInt32(Console.ReadLine());
-    if (n < 10)
+    static void Main()
     {
-        Console.WriteLine(n);
-    }
-    else
-    {
-        while (n > 0)
+        Console.Write("Введите натуральное число N: ");
+        int N = Convert.ToInt32(Console.ReadLine());
+        if (N < 10)
         {
-            int currentDigit = n % 10;
-            n /= 10;
-            if (n > 0)
+            Console.WriteLine(N);
+        }
+        else
+        {
+            while (N > 0)
+            {
+            int currentDigit = N % 10;
+            N /= 10;
+            if (N > 0)
             {
                 Console.Write(currentDigit + ",");
-            }
+            }       
             else
             {
                 Console.WriteLine(currentDigit);
             }
+            }
         }
-    }
+    }          
 }
